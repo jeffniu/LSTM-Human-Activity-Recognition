@@ -22,7 +22,7 @@ def load_X(X_signals_paths):
     X_signals = []
 
     for signal_type_path in X_signals_paths:
-        file = open(signal_type_path, 'rb')
+        file = open(signal_type_path, 'r')
         # Read dataset from disk, dealing with text files' syntax
         X_signals.append(
             [np.array(serie, dtype=np.float32) for serie in [
@@ -37,7 +37,7 @@ def load_X(X_signals_paths):
 # Load "y" (the neural network's training and testing outputs)
 
 def load_y(y_path):
-    file = open(y_path, 'rb')
+    file = open(y_path, 'r')
     # Read dataset from disk, dealing with text file's syntax
     y_ = np.array(
         [elem for elem in [
